@@ -1,0 +1,132 @@
+nav {
+  border-bottom: 2px solid rgb(231, 243, 249);
+}
+
+nav img {
+  width: 100px;
+}
+
+img:not(nav img) {
+  border-radius: 10px;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+#nav-container1 {
+  width: 40%;
+}
+
+#nav-container2 {
+  width: 60%;
+
+  a {
+    font-size: 17px;
+  }
+}
+
+#divnav button {
+  width: 25%;
+  margin-left: 10px;
+}
+
+#container-benefits {
+  border-top: 2px solid rgb(231, 243, 249);
+  border-bottom: 2px solid rgb(231, 243, 249);
+}
+
+#container-main img {
+  width: 100%;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+#container-options,
+#container-plan,
+#container-footer {
+  background-color: rgb(242, 247, 250);
+}
+
+#container-plan button {
+  margin-left: 10px;
+}
+
+#container-two img {
+  width: 50%;
+}
+
+#c-two {
+  width: 35%;
+}
+
+#form {
+  width: 50%;
+}
+
+.card {
+  width: 25%;
+}
+
+.title1 {
+  color: rgb(0, 179, 255);
+}
+
+.title2 {
+  color: rgb(140, 222, 8);
+}
+
+.c-opinion {
+  width: 35%;
+  box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.3);
+  background-color: rgb(246, 242, 250);
+}
+
+.c1,
+.c2,
+.c3 {
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.c1 {
+  background-color: rgb(11, 181, 184);
+}
+
+.c2 {
+  background-color: rgb(6, 101, 132);
+}
+
+.c3 {
+  background-color: rgb(6, 6, 132);
+}
+
+@media (max-width: 768px) {
+  #c-two {
+    width: 100%;
+  }
+
+  #container-two img {
+    width: 100%;
+    padding: 0;
+  }
+
+  #container-options {
+    flex-direction: column;
+  }
+
+  #cards {
+    flex-direction: column;
+  }
+
+  .card {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  #form {
+    width: 100%;
+  }
+
+  .c-opinions {
+    flex-direction: column;
+  }
+}

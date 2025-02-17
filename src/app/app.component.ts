@@ -214,19 +214,16 @@ export class AppComponent {
     ]
   }; 
 
-  getProducts(quantity: number) {
-    return this.products.slice(0, quantity);
-  }
 
   buttonClicked(productName: string) {
     const selectedProduct = this.products.find(product => product.product === productName);
-    
-    if (selectedProduct) {
+
+    if (!selectedProduct) return
       this.mainProduct = {
         ...selectedProduct,
         reviews: selectedProduct.reviews || []
       };
-    }
+    
   }
 
 

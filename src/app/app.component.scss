@@ -1,54 +1,14 @@
-img {
-  height: 60px;
-}
-
-#nav {
-  background-color: rgba(138, 123, 123, 0.081);
+.favourite-div {
+    background-color: rgb(79, 79, 79);
+    color: white;
 }
 
 button {
-  font-size: 14px;
-  background-color: rgb(79, 16, 16);
-  border: 1px solid rgb(79, 16, 16);
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  transition: all 0.5s linear;
-
-  &:hover {
-    background-color: rgba(79, 16, 16, 0.671);
-    border: 1px solid rgba(79, 16, 16, 0.671);
-  }
+    color: white;
+    background-color: rgb(79, 79, 79);
 }
 
-#similars {
-  width: 35%;
-  transition: all 0.5s linear;
-
-  &:hover {
-    cursor: pointer;
-    width: 38%; 
-  }
+.b-filtro {
+    background-color: white;
+    color: rgb(79, 79, 79);
 }
-
-#opinion, #similar-container {
-  background-color: rgba(138, 123, 123, 0.081);
-}
-
-#opinion div:nth-child(2) div:nth-child(2) {
-  font-size: 12px;
-}
-
-#opinion div:nth-child(3) p {
-  font-size: 14px;
-}
-
-#modal {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 70%;
-  padding: 20px; 
-  background-color: rgb(244, 243, 243);
-  border: 5px solid rgb(229, 228, 228);
-}
-

@@ -1,0 +1,26 @@
+<div *ngIf="main_product!.reviews.length > 0" class="container mb-5">
+    <div class="row mt-4">
+      <p class="fs-2 fw-bold m-3">Opiniones</p>
+      <div *ngFor="let review of main_product!.reviews" class="col-12 p-4">
+
+        <div id="opinion" class="container d-flex align-items-center border rounded shadow">
+          <div class="col-2 p-4">
+            <img src="assets/images/{{review.image}}" class="img-fluid" alt="Logo" />
+          </div>
+
+          <div class="col-3 p-4">
+            <div class="fw-bold">{{ review.name }}</div>
+            <div>{{ review.date }}</div>
+            <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="#FFD700">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.54 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg> {{ review.rating }}</div>
+          </div>
+          
+          <div class="col-7 p-4">
+            <p>{{ review.opinion }}</p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div>

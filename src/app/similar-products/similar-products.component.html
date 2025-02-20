@@ -1,0 +1,26 @@
+<div *ngIf="main_product!.similarProducts.length > 0" id="similar-container" class="container border-bottom">
+    <p class="fs-2 text-center p-2 mb-4">Productos Similares</p>
+    <div class="row mb-4">
+      <div 
+        id="similars" 
+        (click)="onOpenModal(similarProduct.product)" 
+        class="col-md-3 mb-4 container d-flex align-items-center justify-content-center p-3 border rounded shadow" 
+        *ngFor="let similarProduct of main_product!.similarProducts">
+    
+        <div class="me-4">
+          <img src="assets/images/{{similarProduct.image}}" class="img-fluid" alt="Logo" />
+        </div>
+    
+        <div>
+          <div class="fw-bold">{{ similarProduct.product }}</div>
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14" fill="#FFD700">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.54 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            {{ similarProduct.rating }}
+          </div>
+          <div class="similiar-text">{{ similarProduct.price }} €</div>
+        </div>
+      </div>
+    </div>
+</div>

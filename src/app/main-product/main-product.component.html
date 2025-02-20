@@ -1,0 +1,46 @@
+<div class="row border-bottom">
+  <div class="col-6 container d-flex align-items-center justify-content-center">
+    <img
+      src="assets/images/{{ main_product?.image }}"
+      class="img-fluid h-100 p-5"
+      alt="Logo"
+    />
+  </div>
+
+  <div class="col-6 d-flex flex-column">
+    <div class="border-bottom container d-flex flex-column mt-4">
+      <p class="fw-bold fs-1">
+        {{ main_product?.product }}
+        <span
+          (click)="buttonFavourite()"
+          [ngClass]="{ favourite: main_product!.favourite === true }"
+          class="material-symbols-outlined"
+        >
+          favorite
+        </span>
+      </p>
+
+      <div class="d-flex align-items-start justify-content-start">
+        <app-star-rating [rating]="main_product!.rating"></app-star-rating>
+
+        <p class="mb-4 ms-3">5 opiniones</p>
+      </div>
+    </div>
+    <div class="container d-flex flex-column border-bottom">
+      <p class="mt-4 mb-4 fs-4">{{ main_product?.price }} €</p>
+    </div>
+    <div class="container d-flex flex-column border-bottom">
+      <p class="mt-4 mb-4">
+        {{ main_product?.description }}
+      </p>
+    </div>
+    <div class="container d-flex flex-column">
+      <button
+        (click)="onDeleteProduct(main_product!.product)"
+        class="btn btn-primary mt-4 mb-4 w-50 fw-bold"
+      >
+        Eliminar producto
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+img {
+    height: 60px;
+}
+  
+#similars {
+  width: 35%;
+  transition: all 0.5s linear;
+  
+  &:hover {
+    cursor: pointer;
+    width: 38%; 
+  }
+}

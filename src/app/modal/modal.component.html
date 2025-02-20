@@ -1,0 +1,44 @@
+<div id="modal" *ngIf="is_ModalOpen" class="modal-overlay shadow rounded" (click)="onCloseModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+
+
+      <div class="container col-12 border-start">
+        <div class="row border-bottom">
+  
+          <div class="col-6 container d-flex align-items-center justify-content-center">
+            <img
+            src="assets/images/{{modal_product?.image}}"
+            class="img-fluid h-100 p-5"
+            alt="Logo"
+          />
+          </div>
+  
+          <div class="col-6 d-flex flex-column">
+            <div class="border-bottom container d-flex flex-column  mt-4 ">
+              <p class="fw-bold fs-1">{{ modal_product?.product }}</p>
+  
+              <div>
+                <p class="fs-4"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="27" height="27" fill="#FFD700">
+                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.54 5.82 22 7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                </svg>
+                {{ modal_product?.rating }}</p>
+  
+                <p class="mb-4">5 opiniones</p>
+              </div>
+            
+            </div>
+            <div class="container d-flex flex-column border-bottom">
+              <p class="mt-4 mb-4 fs-4">{{ modal_product?.price }} €</p>
+            </div>
+            <div class="container d-flex flex-column border-bottom">
+              <p class="mt-4 mb-4">
+                {{ modal_product?.description }}
+              </p>
+            </div>
+            <button class="btn btn-primary fw-bold mb-4" (click)="onCloseModal()">Cerrar</button>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>

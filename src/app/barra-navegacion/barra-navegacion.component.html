@@ -1,19 +1,34 @@
 <div id="nav" class="container border-bottom p-2">
-    <div class="row d-flex align-items-center justify-content-center">
-      <div class="container col-6 d-flex">
-        <img src="assets/images/coffee-logo.png" class="img-fluid ms-4" alt="Logo" />
-      </div>
-      <div
-        class="container col-6 d-flex align-items-center justify-content-around"
-      >
-        <div>Inicio</div>
-        <div>Nosotros</div>
-        <div>Tienda</div>
-        <div>Ayuda</div>
-        <button class="btn btn-primary"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
-          <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zM7.01 16L6 4H4V2h3c.55 0 1.04.45 1.1 1l1.6 12h9.25c.83 0 1.54-.5 1.84-1.24l2.56-6.1-1.92-.78-2.56 6.1H9.03l-.51-4h12.62v-2H8.56l-.55-4H20V4H6.41l.6 8H7.01z"/>
-        </svg>
-         Carrito</button>
-      </div>
+  <div class="row d-flex align-items-center justify-content-center">
+    <div class="container col-6 d-flex">
+      <img
+        src="assets/images/coffee-logo.png"
+        class="img-fluid ms-4"
+        alt="Logo"
+      />
     </div>
+    <div
+      class="container col-6 d-flex align-items-center justify-content-around"
+    >
+      <a routerLink="/" routerLinkActive="active">Inicio</a>
+      <a routerLink="/nosotros" routerLinkActive="active">Nosotros</a>
+      <a routerLink="/tienda" routerLinkActive="active">Tienda</a>
+      <a (click)="irATienda()" style="cursor: pointer">Ayuda</a>
+
+      <button class="btn btn-primary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          width="24"
+          height="24"
+          fill="currentColor"
+        >
+          <path
+            d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2zM7.01 16L6 4H4V2h3c.55 0 1.04.45 1.1 1l1.6 12h9.25c.83 0 1.54-.5 1.84-1.24l2.56-6.1-1.92-.78-2.56 6.1H9.03l-.51-4h12.62v-2H8.56l-.55-4H20V4H6.41l.6 8H7.01z"
+          />
+        </svg>
+        Carrito
+      </button>
+    </div>
+  </div>
 </div>

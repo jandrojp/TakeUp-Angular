@@ -10,4 +10,5 @@ export interface Product {
   similarProducts: Product[];
   reviews: Review[];
   favourite: boolean;
+  add: boolean;
 }

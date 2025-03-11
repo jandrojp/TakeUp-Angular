@@ -1,4 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Product } from 'src/app/models/product.model';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main-product',
@@ -6,35 +8,20 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./main-product.component.scss'],
 })
 export class MainProductComponent {
-  @Input() main_product?: {
-    image: string;
-    product: string;
-    price: number;
-    currency: string;
-    rating: number;
-    description: string;
-    similarProducts: {
-      image: string;
-      product: string;
-      price: number;
-      currency: string;
-      rating: number;
-      description: string;
-    }[];
-    reviews: {
-      image: string;
-      name: string;
-      rating: number;
-      opinion: string;
-      date: string;
-    }[];
-    favourite: boolean;
-  };
+  @Input() main_product: Product | undefined | null;
 
   @Output() buttonDeleteProduct = new EventEmitter<string>();
+  @Output() buttonAddProduct = new EventEmitter<Product>();
+
+  mainProduct$: Observable<Product | null> = new Observable<Product | null>();
 
   onDeleteProduct(productDeleteName: string) {
     this.buttonDeleteProduct.emit(productDeleteName);
+  }
+
+  onAddProduct(productAddName: Product) {
+    this.buttonAddProduct.emit(productAddName);
+    console.log(this.mainProduct$);
   }
 
   buttonFavourite() {

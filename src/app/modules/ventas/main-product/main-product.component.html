@@ -13,7 +13,7 @@
         {{ main_product?.product }}
         <span
           (click)="buttonFavourite()"
-          [ngClass]="{ favourite: main_product!.favourite === true }"
+          [ngClass]="{ favourite: main_product?.favourite === true }"
           class="material-symbols-outlined"
         >
           favorite
@@ -34,12 +34,19 @@
         {{ main_product?.description }}
       </p>
     </div>
-    <div class="container d-flex flex-column">
+    <div class="container d-flex justify-content-center align-items-center">
       <button
         (click)="onDeleteProduct(main_product!.product)"
         class="btn btn-primary mt-4 mb-4 w-50 fw-bold"
       >
         Eliminar producto
+      </button>
+      <button
+        *ngIf="main_product"
+        (click)="onAddProduct(main_product)"
+        class="btn btn-primary mt-4 mb-4 w-50 fw-bold ms-3"
+      >
+        Añadir al carrito
       </button>
     </div>
   </div>

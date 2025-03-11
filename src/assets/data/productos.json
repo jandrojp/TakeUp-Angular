@@ -1,0 +1,194 @@
+[
+  {
+    "image": "colombia.png",
+    "product": "Café de Colombia",
+    "price": 16,
+    "currency": "€",
+    "rating": 2.8,
+    "description": "Un café suave y aromático cultivado en las montañas colombianas, conocido por su sabor balanceado.",
+    "similarProducts": [
+      {
+        "image": "etiopia.png",
+        "product": "Café Etiopía",
+        "price": 12,
+        "currency": "€",
+        "rating": 4.3,
+        "description": "Café de origen etíope con sabores frutales y una acidez vibrante. Ideal para los amantes del café con carácter único.",
+        "similarProducts": [],
+        "reviews": [],
+        "favourite": false,
+        "add": false
+      },
+      {
+        "image": "kenia.png",
+        "product": "Café Kenia AA",
+        "price": 18,
+        "currency": "€",
+        "rating": 4.5,
+        "description": "Café de Kenia con cuerpo medio y notas de frutas tropicales. Una de las variedades más apreciadas por su complejidad.",
+        "similarProducts": [],
+        "reviews": [],
+        "favourite": false,
+        "add": false
+      },
+      {
+        "image": "guatemala.png",
+        "product": "Café de Guatemala",
+        "price": 13,
+        "currency": "€",
+        "rating": 4.6,
+        "description": "Café con cuerpo robusto y notas a chocolate oscuro, ideal para quienes buscan una taza intensa.",
+        "similarProducts": [],
+        "reviews": [],
+        "favourite": false,
+        "add": false
+      }
+    ],
+    "reviews": [
+      {
+        "image": "user1.png",
+        "name": "Juan Valdez",
+        "rating": 5,
+        "opinion": "El mejor café que he probado, con un sabor perfectamente equilibrado y una textura suave.",
+        "date": "05-03-2023 14:30"
+      },
+      {
+        "image": "user3.png",
+        "name": "Carmen Rodríguez",
+        "rating": 4,
+        "opinion": "Muy buen café, aunque prefiero un poco más de acidez en mi taza. Aún así, altamente recomendable.",
+        "date": "05-03-2023 14:30"
+      }
+    ],
+    "favourite": false,
+    "add": false
+  },
+  {
+    "image": "etiopia.png",
+    "product": "Café Etiopía",
+    "price": 12,
+    "currency": "€",
+    "rating": 4,
+    "description": "Café de origen etíope con sabores frutales y una acidez vibrante. Ideal para los amantes del café con carácter único.",
+    "similarProducts": [
+      {
+        "image": "colombia.png",
+        "product": "Café de Colombia",
+        "price": 16,
+        "currency": "€",
+        "rating": 4.8,
+        "description": "Un café suave y aromático cultivado en las montañas colombianas, conocido por su sabor balanceado y notas dulces.",
+        "similarProducts": [],
+        "reviews": [],
+        "favourite": false,
+        "add": false
+      },
+      {
+        "image": "kenia.png",
+        "product": "Café Kenia AA",
+        "price": 18,
+        "currency": "€",
+        "rating": 4.5,
+        "description": "Café de Kenia con cuerpo medio y notas de frutas tropicales. Una de las variedades más apreciadas por su complejidad.",
+        "similarProducts": [],
+        "reviews": [],
+        "favourite": false,
+        "add": false
+      },
+      {
+        "image": "guatemala.png",
+        "product": "Café de Guatemala",
+        "price": 13,
+        "currency": "€",
+        "rating": 4.6,
+        "description": "Café con cuerpo robusto y notas a chocolate oscuro, ideal para quienes buscan una taza intensa.",
+        "similarProducts": [],
+        "reviews": [],
+        "favourite": false,
+        "add": false
+      }
+    ],
+    "reviews": [
+      {
+        "image": "user1.png",
+        "name": "Pablo Escobar",
+        "rating": 5,
+        "opinion": "Un sabor único, con una acidez agradable que perdura en el paladar. Excelente calidad.",
+        "date": "05-03-2023 14:30"
+      },
+      {
+        "image": "user3.png",
+        "name": "María Álvarez",
+        "rating": 3,
+        "opinion": "Me esperaba un sabor más fuerte, pero es un buen café para el día a día.",
+        "date": "05-03-2023 14:30"
+      }
+    ],
+    "favourite": false,
+    "add": false
+  },
+  {
+    "image": "kenia.png",
+    "product": "Café Kenia AA",
+    "price": 18,
+    "currency": "€",
+    "rating": 4.5,
+    "description": "Café de Kenia con cuerpo medio y notas de frutas tropicales. Una de las variedades más apreciadas por su complejidad.",
+    "similarProducts": [
+      {
+        "image": "etiopia.png",
+        "product": "Café Etiopía",
+        "price": 12,
+        "currency": "€",
+        "rating": 4.3,
+        "description": "Café de origen etíope con sabores frutales y una acidez vibrante. Ideal para los amantes del café con carácter único.",
+        "similarProducts": [],
+        "reviews": [],
+        "favourite": false,
+        "add": false
+      },
+      {
+        "image": "colombia.png",
+        "product": "Café de Colombia",
+        "price": 16,
+        "currency": "€",
+        "rating": 4.8,
+        "description": "Un café suave y aromático cultivado en las montañas colombianas, conocido por su sabor balanceado y notas dulces.",
+        "similarProducts": [],
+        "reviews": [],
+        "favourite": false,
+        "add": false
+      }
+    ],
+    "reviews": [
+      {
+        "image": "user2.png",
+        "name": "Stan Smith",
+        "rating": 1,
+        "opinion": "Demasiado ácido para mi gusto. No es lo que buscaba en un café.",
+        "date": "05-03-2023 14:30"
+      },
+      {
+        "image": "user3.png",
+        "name": "Randy Watson",
+        "rating": 5,
+        "opinion": "Increíble. La combinación de cuerpo y sabor es perfecta para las mañanas.",
+        "date": "05-03-2023 14:30"
+      }
+    ],
+    "favourite": false,
+    "add": false
+  },
+  {
+    "image": "guatemala.png",
+    "product": "Café Guatemala",
+    "price": 13,
+    "currency": "€",
+    "rating": 3.2,
+    "description": "Café con cuerpo robusto y notas a chocolate oscuro, ideal para quienes buscan una taza intensa.",
+    "similarProducts": [],
+    "reviews": [],
+    "favourite": false,
+    "add": false
+  }
+]

@@ -18,7 +18,7 @@ export class MenuLateralComponent implements OnChanges {
 
   @Input() products_list?: Product[];
 
-  filteredProducts: Product[] | undefined;
+  filteredProducts: Product[] = [];
 
   selectedProduct?: Product;
   isFiltroValoracion!: boolean;

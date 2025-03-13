@@ -24,6 +24,10 @@ export class ProductService {
   constructor(private http: HttpClient) {}
 
   fetchProducts(): void {
+    if (this._myProducts.getValue().length > 0) {
+      return; // Evitar sobreescribir la lista si ya hay productos cargados
+    }
+
     this.http.get<Product[]>(this.productsUrl).subscribe({
       next: (products: Product[]) => {
         this._myProducts.next(products);
@@ -36,11 +40,11 @@ export class ProductService {
     });
   }
 
-  get ProductsObservableData(): Observable<Product[]> {
+  getProductsObservableData(): Observable<Product[]> {
     return this._myProducts.asObservable();
   }
 
-  get FilteredProductsObservableData(): Observable<Product[]> {
+  getFilteredProductsObservableData(): Observable<Product[]> {
     return this._filteredProducts.asObservable();
   }
 
@@ -48,7 +52,7 @@ export class ProductService {
     return this._cartProducts.asObservable();
   }
 
-  get SelectedProductObservableData(): Observable<Product | null> {
+  getSelectedProductObservableData(): Observable<Product | null> {
     return this._selectedProduct.asObservable();
   }
 
@@ -73,6 +77,24 @@ export class ProductService {
     });
   }
 
+  addProductToList(product: Product): void {
+    const currentProducts = this._myProducts.getValue();
+    this._myProducts.next([...currentProducts, product]);
+  }
+
+  removeProductFromList(product: Product): void {
+    const updatedProducts = this._myProducts
+      .getValue()
+      .filter((item) => item.product !== product.product);
+
+    this._myProducts.next(updatedProducts);
+    this._filteredProducts.next(updatedProducts);
+
+    this._selectedProduct.next(
+      updatedProducts.length > 0 ? updatedProducts[0] : null
+    );
+  }
+
   removeProductFromCart(product: Product): void {
     product.add = false;
     const currentCart = this._cartProducts.getValue();
@@ -80,20 +102,5 @@ export class ProductService {
       (item) => item.product !== product.product
     );
     this._cartProducts.next(updatedCart);
-  }
-
-  deleteProductByName(productName: string): void {
-    const currentProducts = this._myProducts.getValue();
-    const updatedProducts = currentProducts.filter(
-      (product) => product.product !== productName
-    );
-
-    this._myProducts.next(updatedProducts);
-    this._filteredProducts.next(updatedProducts);
-    if (this._selectedProduct.getValue()?.product === productName) {
-      this._selectedProduct.next(
-        updatedProducts.length > 0 ? updatedProducts[0] : null
-      );
-    }
   }
 }

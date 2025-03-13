@@ -5,7 +5,7 @@ import { TiendaGuard } from './guards/tienda.guard';
 
 const routes: Routes = [
   {
-    path: 'principal',
+    path: 'ventas',
     loadChildren: () =>
       import('./modules/ventas/ventas.module').then((m) => m.VentasModule),
   },
@@ -24,6 +24,7 @@ const routes: Routes = [
         (m) => m.GestionCarritoModule
       ),
   },
+
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 

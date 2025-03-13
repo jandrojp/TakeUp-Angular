@@ -1,0 +1,145 @@
+<div class="container">
+  <div class="row">
+    <div class="txt-principal col-10 fs-2 fw-bold">Crea un nuevo producto</div>
+  </div>
+  <div class="row">
+    <div class="txt-pequeño col-10">
+      Usa el formulario para crear un nuevo producto.
+    </div>
+  </div>
+
+  <div
+    *ngIf="!showModal"
+    id="formulario-contenedor"
+    class="row border rounded mt-5 mb-5 p-5 shadow"
+  >
+    <div class="col-8">
+      <div class="fs-4 fw-bold mb-3">Información del producto</div>
+
+      <form
+        class="mt-5"
+        (ngSubmit)="enviarInfoUsuario()"
+        [formGroup]="productoFormulario"
+        autocomplete="off"
+      >
+        <div class="row">
+          <div class="form-group col-5">
+            <label class="fw-bold mb-1" for="nombreProducto"
+              >Nombre del producto</label
+            >
+            <input
+              class="form-control"
+              id="nombreProducto"
+              placeholder="Escribe el nombre"
+              formControlName="nombre"
+              type="text"
+            />
+            <small *ngIf="validarCampo('nombre')" class="form-text text-danger">
+              ❌ El campo nombre es incorrecto (mín. 4 caracteres).
+            </small>
+          </div>
+
+          <div class="form-group col-5">
+            <label class="fw-bold mb-1" for="precioProducto">Precio</label>
+            <input
+              class="form-control"
+              id="precioProducto"
+              placeholder="Escribe el precio"
+              formControlName="precio"
+              type="number"
+            />
+            <small *ngIf="validarCampo('precio')" class="form-text text-danger">
+              ❌ El campo precio es incorrecto (entre 1 y 999).
+            </small>
+          </div>
+        </div>
+
+        <div class="form-check mt-4">
+          <input
+            type="checkbox"
+            class="favorito form-check-input"
+            id="favoritoCheck"
+            formControlName="favorito"
+          />
+          <label class="form-check-label" for="favoritoCheck">Favorito</label>
+        </div>
+
+        <div class="form-group mt-4 col-10">
+          <label class="fw-bold mb-1" for="descripcionProducto"
+            >Descripción</label
+          >
+          <input
+            class="i-descripcion form-control"
+            id="descripcionProducto"
+            formControlName="descripcion"
+            placeholder="Escribe la descripción"
+          />
+          <small
+            *ngIf="validarCampo('descripcion')"
+            class="form-text text-danger"
+          >
+            ❌ La descripción es incorrecta (máx. 350 caracteres, sin caracteres
+            especiales).
+          </small>
+        </div>
+
+        <div class="d-flex justify-content-end mt-4">
+          <button
+            type="submit"
+            [disabled]="formularioEnviado && productoFormulario.invalid"
+            class="btn w-25 btn-primary"
+          >
+            GUARDAR
+          </button>
+          <div class="col-2"></div>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-4 border-start d-flex flex-column">
+      <div class="fs-4 fw-bold ms-5">Productos Similares</div>
+      <div class="border-top mt-2 ms-5"></div>
+
+      <div
+        class="ms-5 mt-3 d-flex justify-content-between align-items-center"
+        *ngFor="let product of products$"
+      >
+        <input
+          type="checkbox"
+          class="similar form-check-input shadow"
+          (change)="checkBoxProductoSimilar(product, $event)"
+        />
+
+        <div
+          id="card-similar"
+          class="d-flex align-items-center justify-content-between rounded shadow w-100 ms-4"
+        >
+          <img src="assets/images/{{ product.image }}" />
+
+          <div>
+            <p class="fw-bold">{{ product.product }}</p>
+            <p>{{ product.price }} €</p>
+          </div>
+
+          <span
+            id="favorite-{{ product.favourite }}"
+            class="material-symbols-outlined"
+          >
+            favorite
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="formulario-contenedor"
+    class="row border rounded mt-5 mb-5 p-5 shadow d-flex align-items-center justify-content-center flex-column text-center"
+    *ngIf="showModal"
+  >
+    <span class="material-symbols-outlined"> verified </span>
+    <div class="fs-2 fw-bold mb-1">Guardado correctamente !</div>
+    <div class="i-descripcion">Nuevo producto añadido a la lista</div>
+    <button routerLink="" routerLinkActive="active" class="w-50">VOLVER</button>
+  </div>
+</div>

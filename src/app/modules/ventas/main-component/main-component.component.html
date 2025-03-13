@@ -18,31 +18,32 @@
     />
   </head>
   <body>
-    <ng-container *ngIf="products$ | async as products; else loading">
-      <div *ngIf="products.length > 0" class="container">
+    <ng-container *ngIf="products$.length > 0; else loading">
+      <div *ngIf="products$.length > 0" class="container">
         <div class="row">
           <div class="col-3 d-flex flex-column p-4 border-end">
             <app-menu-lateral
-              [products_list]="products"
+              [products_list]="products$"
               (buttonChangeMainProduct)="changeMainProduct($event)"
             ></app-menu-lateral>
           </div>
 
           <div
             [ngClass]="{
-              'favourite-div': (mainProduct$ | async)?.favourite === true,
-              'add-div': (mainProduct$ | async)?.add === true
+              'favourite-div': mainProduct$?.favourite === true,
+              'add-div': mainProduct$?.add === true
             }"
             class="col-9 p-4"
           >
             <app-main-product
-              [main_product]="mainProduct$ | async"
-              (buttonDeleteProduct)="deleteMainProduct($event)"
+              [main_product]="mainProduct$"
+              *ngIf="mainProduct$ != null"
+              (buttonDeleteProduct)="deleteMainProduct(mainProduct$)"
               (buttonAddProduct)="addMainProduct($event)"
             ></app-main-product>
 
             <app-similar-products
-              [main_product]="mainProduct$ | async"
+              [main_product]="mainProduct$"
               (buttonOpenModal)="openModal($event)"
             ></app-similar-products>
 
@@ -52,9 +53,7 @@
               (buttonCloseModal)="closeModal()"
             ></app-modal>
 
-            <app-opiniones
-              [main_product]="mainProduct$ | async"
-            ></app-opiniones>
+            <app-opiniones [main_product]="mainProduct$"></app-opiniones>
           </div>
         </div>
       </div>

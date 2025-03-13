@@ -9,6 +9,8 @@ import { OpinionesComponent } from './opiniones/opiniones.component';
 import { ModalComponent } from './modal/modal.component';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { MainComponentComponent } from './main-component/main-component.component';
+import { FormularioAnyadirComponent } from './formulario-anyadir/formulario-anyadir.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,8 +21,9 @@ import { MainComponentComponent } from './main-component/main-component.componen
     ModalComponent,
     StarRatingComponent,
     MainComponentComponent,
+    FormularioAnyadirComponent,
   ],
-  imports: [CommonModule, VentasRoutingModule],
+  imports: [CommonModule, VentasRoutingModule, ReactiveFormsModule],
   exports: [MainComponentComponent],
 })
 export class VentasModule {}

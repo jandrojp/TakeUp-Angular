@@ -1,0 +1,73 @@
+.txt-principal {
+  margin-top: 55px;
+}
+
+.txt-pequeño {
+  font-size: 14px;
+  color: rgb(77, 77, 77);
+}
+
+button {
+  font-size: 14px;
+  background-color: rgb(79, 16, 16);
+  border: 1px solid rgb(79, 16, 16);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s linear;
+  font-weight: bold;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: rgba(79, 16, 16, 0.671);
+    border: 1px solid rgba(79, 16, 16, 0.671);
+  }
+}
+
+#formulario-contenedor {
+  background-color: #f5f4f4;
+
+  label {
+    font-size: 14px;
+  }
+
+  input:not(.favorito) {
+    font-size: 14px;
+  }
+
+  .i-descripcion {
+    height: 75px;
+  }
+}
+
+#card-similar {
+  background-color: white;
+  padding: 16px;
+
+  img {
+    width: 80px;
+    height: 80px;
+  }
+
+  p {
+    font-size: 13px;
+  }
+
+  span {
+    font-size: 20px;
+  }
+}
+
+span {
+  font-size: 80px;
+  margin-bottom: 20px;
+}
+
+#similarCheck {
+  height: 20px;
+  width: 20px;
+}
+
+#favorite-true {
+  color: red;
+}

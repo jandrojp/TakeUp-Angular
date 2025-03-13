@@ -42,8 +42,13 @@ export class DateInterceptor implements HttpInterceptor {
   }
 
   private parseDate(dateStr: string): Date {
-    const [day, month, year, hours, minutes] =
-      this.dateRegex.exec(dateStr) || [];
+    const match = this.dateRegex.exec(dateStr);
+    if (!match) {
+      return dateStr as any;
+    }
+
+    const [, day, month, year, hours, minutes] = match;
+
     return new Date(
       Number(year),
       Number(month) - 1,

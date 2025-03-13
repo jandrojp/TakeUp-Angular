@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../models/product.model';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-main-component',
@@ -9,9 +8,9 @@ import { Observable } from 'rxjs';
   styleUrls: ['./main-component.component.scss'],
 })
 export class MainComponentComponent implements OnInit {
-  products$: Observable<Product[]> = new Observable<Product[]>();
-  filteredProducts$: Observable<Product[]> = new Observable<Product[]>();
-  mainProduct$: Observable<Product | null> = new Observable<Product | null>();
+  products$: Product[] = [];
+  filteredProducts$: Product[] = [];
+  mainProduct$?: Product | null;
 
   modalProduct: Product | null = null;
   isModalOpen: boolean = false;
@@ -21,9 +20,21 @@ export class MainComponentComponent implements OnInit {
   ngOnInit() {
     this.productService.fetchProducts();
 
-    this.products$ = this.productService.ProductsObservableData;
-    this.filteredProducts$ = this.productService.FilteredProductsObservableData;
-    this.mainProduct$ = this.productService.SelectedProductObservableData;
+    this.productService.getProductsObservableData().subscribe((data) => {
+      this.products$ = data;
+    });
+
+    this.productService
+      .getFilteredProductsObservableData()
+      .subscribe((data) => {
+        this.filteredProducts$ = data;
+      });
+
+    this.productService.getSelectedProductObservableData().subscribe((data) => {
+      if (this.products$.length > 0) {
+        this.mainProduct$ = data;
+      }
+    });
   }
 
   changeMainProduct(product: Product) {
@@ -39,16 +50,8 @@ export class MainComponentComponent implements OnInit {
     this.isModalOpen = false;
   }
 
-  deleteMainProduct(productName: string) {
-    this.productService.deleteProductByName(productName);
-
-    this.products$.subscribe((products) => {
-      if (products.length > 0) {
-        this.productService.setSelectedProduct(products[0]);
-      } else {
-        this.productService.setSelectedProduct(null);
-      }
-    });
+  deleteMainProduct(product: Product) {
+    this.productService.removeProductFromList(product);
   }
 
   addMainProduct(product: Product) {
